@@ -23,6 +23,115 @@ body {
     flex-direction: column;
 }
 
+/* Equal Height Columns */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.row > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+}
+
+.row > [class*="col-"] > * {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Services Section - Equal Height Cards */
+.row .feature-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.row .feature-box .service-icon {
+    flex-shrink: 0;
+}
+
+.row .feature-box h3 {
+    flex-shrink: 0;
+}
+
+.row .feature-box p {
+    flex: 1;
+    display: flex;
+    align-items: flex-start;
+}
+
+/* Stats Section - Equal Height Boxes */
+.row .stats-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Contact Section - Equal Height Info Boxes */
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+}
+
+.contact-grid .contact-info-box {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* About Section - Equal Height Columns */
+.row.align-items-center > [class*="col-"] {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* CCTV Products Grid - Equal Height Cards */
+.cctv-solutions-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.cctv-solution-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.cctv-solution-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/* Responsive adjustments for equal heights */
+@media (max-width: 992px) {
+    .cctv-solutions-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .row > [class*="col-"] {
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 576px) {
+    .cctv-solutions-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .row > [class*="col-"] {
+        margin-bottom: 15px;
+    }
+}
+
 .navbar {
     background: var(--gradient);
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
@@ -622,226 +731,6 @@ body {
     opacity: 1;
     transform: translateY(0);
 }
-/* CCTV Solutions Grid - Full Image Cards */
-.cctv-solutions-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 30px;
-margin-top: 50px;
-}
-
-.cctv-solution-card {
-position: relative;
-border-radius: 15px;
-overflow: hidden;
-box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-transition: all 0.3s ease;
-aspect-ratio: 1/1; /* Makes cards square */
-display: flex;
-align-items: flex-end; /* Align content to bottom */
-}
-
-.cctv-solution-img {
-position: absolute;
-width: 100%;
-height: 100%;
-object-fit: cover;
-transition: transform 0.5s ease;
-z-index: 1;
-}
-
-.cctv-solution-content {
-position: relative;
-z-index: 2;
-padding: 25px;
-background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-color: white;
-width: 100%;
-transform: translateY(100px);
-transition: all 0.3s ease;
-}
-
-.cctv-solution-card:hover .cctv-solution-content {
-transform: translateY(0);
-}
-
-.cctv-solution-card:hover .cctv-solution-img {
-transform: scale(1.05);
-}
-
-.cctv-solution-content h3 {
-color: white;
-margin-bottom: 15px;
-font-weight: 700;
-}
-
-.cctv-solution-content p {
-color: rgba(255,255,255,0.8);
-margin-bottom: 20px;
-
-opacity: 0;
-transition: opacity 0.3s ease;
-transition-delay: 0.1s;
-}
-
-.cctv-solution-card:hover .cctv-solution-content p {
-opacity: 1;
-}
-
-
-/* Responsive adjustments */
-@media (max-width: 480px) {
-/* Hero Section */
-.hero {
-padding: 80px 0 40px;
-}
-
-.hero h1 {
-font-size: 1.8rem;
-line-height: 1.4;
-}
-
-.hero p {
-font-size: 1rem;
-margin: 15px auto 20px;
-}
-
-/* Services Section */
-.service-card {
-padding: 20px;
-margin-bottom: 15px;
-}
-
-.service-icon {
-width: 60px;
-height: 60px;
-font-size: 1.8rem;
-}
-
-/* About Section */
-.owner-image-container {
-max-width: 100%;
-margin-bottom: 30px;
-}
-
-.owner-badge {
-width: 100px;
-height: 100px;
-bottom: -15px;
-right: -15px;
-}
-
-.badge-number {
-font-size: 1.5rem;
-}
-
-/* CCTV Solutions Grid */
-.cctv-solution-card {
-aspect-ratio: 3/4;
-}
-
-.cctv-solution-content {
-padding: 15px;
-}
-
-.cctv-solution-content h3 {
-font-size: 1.2rem;
-margin-bottom: 10px;
-}
-
-/* Contact Section */
-.contact-form {
-padding: 20px 15px;
-}
-
-.form-control, .form-select {
-padding: 12px;
-}
-
-.contact-info-box {
-padding: 15px;
-}
-
-.contact-info-box h5 {
-font-size: 1.1rem;
-padding-left: 35px;
-}
-
-.contact-info-box p {
-padding-left: 35px;
-font-size: 0.9rem;
-}
-
-/* Footer */
-.footer {
-padding: 50px 0 20px;
-}
-
-.social-icon {
-width: 40px;
-height: 40px;
-font-size: 1.1rem;
-margin-right: 10px;
-}
-
-/* Navigation */
-.navbar-brand img {
-height: 35px;
-}
-
-/* General adjustments */
-.section-container {
-padding: 50px 0;
-}
-
-.section-title {
-font-size: 1.6rem;
-margin-bottom: 40px;
-}
-
-.section-title:after {
-width: 60px;
-height: 4px;
-}
-
-.btn {
-padding: 10px 20px;
-font-size: 0.9rem;
-}
-
-/* Stats boxes */
-.stats-box .display-4 {
-font-size: 1.8rem;
-}
-
-/* Map container */
-.map-container {
-height: 200px;
-}
-
-/* Form elements */
-.form-label {
-font-size: 0.95rem;
-}
-}
-@media (max-width: 992px) {
-.cctv-solutions-grid {
-grid-template-columns: repeat(2, 1fr);
-}
-}
-
-@media (max-width: 576px) {
-.cctv-solutions-grid {
-grid-template-columns: 1fr;
-}
-.cctv-solution-card {
-aspect-ratio: 3/4; /* More rectangular on mobile */
-}
-
-.cctv-solution-img-container {
-height: 200px;
-}
-}
 
 /* Menu Animation */
 .nav-link {
@@ -902,29 +791,29 @@ height: 200px;
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
 @media (max-width: 360px) {
-/* Extra small devices */
-.hero h1 {
-font-size: 1.5rem;
-}
+    /* Extra small devices */
+    .hero h1 {
+        font-size: 1.5rem;
+    }
 
-.section-title {
-font-size: 1.4rem;
-}
+    .section-title {
+        font-size: 1.4rem;
+    }
 
-.contact-info-box h5 {
-font-size: 1rem;
-}
+    .contact-info-box h5 {
+        font-size: 1rem;
+    }
 
-.contact-info-box p {
-font-size: 0.85rem;
-}
+    .contact-info-box p {
+        font-size: 0.85rem;
+    }
 
-.navbar-brand img {
-height: 30px;
+    .navbar-brand img {
+        height: 30px;
+    }
 }
-}
-
 
 @media (max-width: 768px) {
     .hero {
