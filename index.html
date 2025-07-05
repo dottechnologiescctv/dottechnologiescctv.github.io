@@ -42,9 +42,19 @@
     <!-- Favicon -->
     <link rel="icon" type="image/jpeg" href="./assets/images/logo.jpg">
     
+    <!-- Preload critical resources -->
+    <link rel="preload" href="./assets/css/bootstrap.min.css" as="style">
+    <link rel="preload" href="./assets/css/custom.css" as="style">
+    <link rel="preload" href="./assets/images/logo.jpg" as="image">
+    
+    <!-- CSS Files -->
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/all.min.css">
     <link rel="stylesheet" href="./assets/css/custom.css">
+    
+    <!-- Preconnect to external domains -->
+    <link rel="preconnect" href="https://www.google.com">
+    <link rel="preconnect" href="https://maps.googleapis.com">
 </head>
 <body data-new-gr-c-s-check-loaded="14.1242.0" data-gr-ext-installed="">
     <!-- Floating decorative elements -->
@@ -56,6 +66,18 @@
         <i class="fas fa-check-circle"></i>
         <span>Message sent successfully! Opening WhatsApp...</span>
     </div>
+    
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float" id="whatsappFloat">
+        <a href="https://wa.me/919167737367?text=Hi! I'm interested in CCTV installation services from DOT Technologie" target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+    
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" title="Back to Top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
 
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
@@ -333,7 +355,80 @@
             </div>
         </div>
     </div>
-</section>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="section-container bg-light">
+        <div class="container container-custom">
+            <h2 class="section-title fade-in visible">What Our Clients Say</h2>
+            <p class="text-center mb-5 fade-in visible">Trusted by hundreds of satisfied customers in Bhayandar for CCTV installation and security solutions.</p>
+            
+            <div class="row">
+                <div class="col-lg-4 mb-4 fade-in visible">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Excellent CCTV installation service! Sagar and his team installed a complete security system for my shop. Professional work and great after-sales support."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Rajesh Patel</h5>
+                                <span>Shop Owner, Bhayandar</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4 fade-in visible">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Best computer repair service in Bhayandar! Fixed my laptop quickly and at reasonable rates. Highly recommended for all tech solutions."</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Priya Sharma</h5>
+                                <span>Student, Bhayandar</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 mb-4 fade-in visible">
+                    <div class="testimonial-card">
+                        <div class="testimonial-content">
+                            <p>"Professional biometric device installation for our office. Sagar's expertise in security systems is unmatched. Great service and support!"</p>
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-info">
+                                <h5>Vikram Singh</h5>
+                                <span>Office Manager, Bhayandar</span>
+                            </div>
+                            <div class="rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Enhanced Contact Section -->
     <section id="contact" class="contact-section">
@@ -416,6 +511,26 @@
         </div>
     </section>
 
+    <!-- Call to Action Section -->
+    <section class="cta-section">
+        <div class="container container-custom">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center">
+                    <h2 class="text-white mb-4">Ready to Secure Your Property?</h2>
+                    <p class="text-white mb-5">Get professional CCTV installation services in Bhayandar. Contact us today for a free consultation and quote.</p>
+                    <div class="d-flex justify-content-center gap-4 flex-wrap">
+                        <a href="https://wa.me/919167737367?text=Hi! I need CCTV installation services. Can you provide a quote?" class="btn btn-light btn-lg px-5 py-3 fw-bold">
+                            <i class="fab fa-whatsapp me-2"></i>Get Free Quote
+                        </a>
+                        <a href="tel:+919167737367" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
+                            <i class="fas fa-phone me-2"></i>Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Simplified Footer -->
     <footer class="footer">
         <div class="container container-custom">
@@ -446,7 +561,11 @@
             <hr class="my-5 bg-light bg-opacity-25">
             
             <div class="text-center py-3">
-                <p class="mb-0"> 2015 DOT TECHNOLOGIE. All Rights Reserved.</p>
+                <p class="mb-0">© 2015 DOT TECHNOLOGIE. All Rights Reserved.</p>
+                <div class="mt-2">
+                    <a href="#" class="text-light text-decoration-none me-3" style="font-size: 0.9rem;">Privacy Policy</a>
+                    <a href="#" class="text-light text-decoration-none" style="font-size: 0.9rem;">Terms of Service</a>
+                </div>
             </div>
         </div>
     </footer>
@@ -560,6 +679,39 @@
         
         // Update active nav link on page load
         updateActiveNavLink();
+        
+        // Back to Top Button functionality
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('show');
+            } else {
+                backToTopButton.classList.remove('show');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // Lazy loading for images
+        const images = document.querySelectorAll('img[data-src]');
+        const imageObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
     </script>
 
 
