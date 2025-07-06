@@ -379,6 +379,7 @@ body {
     max-width: 1200px;
     transition: all 0.3s ease;
     animation: navbarSlideDown 0.8s ease-out;
+    overflow: hidden;
 }
 
 @keyframes navbarSlideDown {
@@ -401,18 +402,81 @@ body {
 
 .navbar-brand {
     transition: all 0.3s ease;
+    pointer-events: auto;
+    position: relative;
+    z-index: 1;
 }
 
 .navbar-brand:hover {
     transform: scale(1.05);
 }
 
+/* Prevent logo from interfering with navbar navigation */
+.navbar-brand .logo-container {
+    pointer-events: auto;
+    z-index: 1;
+    overflow: visible;
+    position: relative;
+}
+
+.navbar-brand img {
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
+/* Prevent any scrolling effects on logo hover */
+.navbar-brand:hover {
+    transform: scale(1.05);
+    overflow: visible;
+}
+
+.navbar-brand:focus {
+    outline: none;
+    overflow: visible;
+}
+
+/* Completely isolate navbar nav from logo hover effects */
 .navbar-nav {
     align-items: center;
+    pointer-events: auto;
+    z-index: 2;
+    position: relative;
+    isolation: isolate;
 }
 
 .nav-item {
     margin: 0 5px;
+    pointer-events: auto;
+    position: relative;
+    z-index: 2;
+}
+
+.nav-link {
+    color: var(--dark) !important;
+    font-weight: 600;
+    padding: 10px 20px !important;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    background: transparent;
+    z-index: 2;
+    pointer-events: auto;
+}
+
+/* Remove logo hover effect to prevent scrolling issues */
+.navbar-brand:hover {
+    transform: none;
+}
+
+.nav-item {
+    margin: 0 5px;
+    pointer-events: auto;
 }
 
 .nav-link {

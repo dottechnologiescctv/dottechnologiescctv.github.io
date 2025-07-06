@@ -711,7 +711,7 @@
                             <i class="fab fa-whatsapp me-2"></i>Get Free Quote
                         </a>
                         <a href="tel:+919167737367" class="btn btn-outline-light btn-lg px-5 py-3 fw-bold">
-                            <i class="fas fa-phone me-2"></i>Call Now
+                            <i class="fas fa-phone me-2 text-white"></i>Call Now
                         </a>
                     </div>
                 </div>
@@ -921,6 +921,22 @@
         });
         
         images.forEach(img => imageObserver.observe(img));
+        
+        // Prevent logo hover from affecting navbar
+        const navbarBrand = document.querySelector('.navbar-brand');
+        if (navbarBrand) {
+            navbarBrand.addEventListener('mouseenter', function(e) {
+                e.stopPropagation();
+            });
+            
+            navbarBrand.addEventListener('mouseleave', function(e) {
+                e.stopPropagation();
+            });
+            
+            navbarBrand.addEventListener('click', function(e) {
+                e.stopPropagation();
+            });
+        }
         
         // Custom dropdown functionality
         const serviceDropdown = document.getElementById('serviceDropdown');
