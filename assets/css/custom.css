@@ -1480,8 +1480,8 @@ body {
 
 .brand-card p {
     color: #64748b;
-    font-size: 0.9rem;
-    line-height: 1.5;
+    font-size: 1rem;
+    line-height: 1.6;
     margin: 0;
     flex: 1;
     display: flex;
@@ -1527,7 +1527,7 @@ body {
     }
     
     .brand-card p {
-        font-size: 0.85rem;
+        font-size: 0.95rem;
     }
 }
 
