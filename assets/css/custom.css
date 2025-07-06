@@ -1893,6 +1893,87 @@ a {
     color: #fb5b29 !important;
 }
 
+/* Fix anchor links in sections with primary backgrounds */
+.cta-section a,
+.footer a {
+    color: white !important;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.cta-section a:hover,
+.footer a:hover {
+    color: #f8f9fa !important;
+    text-decoration: underline;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* Exclude social media icons from the general anchor hover effects */
+.cta-section .social-icon,
+.footer .social-icon {
+    color: #f8f9fa !important;
+    text-decoration: none;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background-color: #333 !important;
+}
+
+.cta-section .social-icon:hover,
+.footer .social-icon:hover {
+    color: white !important;
+    text-decoration: none;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    background-color: #000 !important;
+}
+
+/* Specific styling for footer links */
+.footer a {
+    color: rgba(248, 249, 250, 0.9) !important;
+}
+
+.footer a:hover {
+    color: white !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Ensure buttons in CTA section maintain their styling */
+.cta-section .btn {
+    color: inherit !important;
+}
+
+.cta-section .btn:hover {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+/* Call Now button hover effect */
+.cta-section .btn-outline-light:hover {
+    background-color: white !important;
+    color: var(--primary) !important;
+    border-color: white !important;
+}
+
+/* Call Now button phone icon color */
+.cta-section .btn-outline-light .fas.fa-phone {
+    color: #333 !important;
+}
+
+/* Call Now button phone icon hover effect */
+.cta-section .btn-outline-light:hover .fas.fa-phone {
+    color: var(--primary) !important;
+}
+
 #contact {
  color: #171717 !important;
+}
+
+/* Contact section subtitle styling */
+#contact .text-center.mb-5.fade-in.visible {
+    font-size: 1.2rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: #171717 !important;
 }
