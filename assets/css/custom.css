@@ -742,6 +742,100 @@ body {
     padding: 10px;
 }
 
+/* Custom Dropdown Styles */
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+}
+
+.custom-dropdown-toggle {
+    background: rgba(255, 255, 255, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: white;
+    padding: 15px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    font-size: clamp(0.95rem, 2vw, 1.05rem);
+}
+
+.custom-dropdown-toggle:hover {
+    background: rgba(255, 255, 255, 0.25);
+    border-color: white;
+}
+
+.custom-dropdown-toggle i {
+    transition: transform 0.3s ease;
+}
+
+.custom-dropdown.active .custom-dropdown-toggle i {
+    transform: rotate(180deg);
+}
+
+.custom-dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    max-height: 300px;
+    overflow-y: auto;
+    display: none;
+    margin-top: 5px;
+}
+
+.custom-dropdown.active .custom-dropdown-menu {
+    display: block;
+}
+
+.custom-dropdown-item {
+    padding: 12px 15px;
+    cursor: pointer;
+    color: #374151;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.custom-dropdown-item:last-child {
+    border-bottom: none;
+}
+
+.custom-dropdown-item:hover {
+    background-color: var(--primary) !important;
+    color: white !important;
+}
+
+.custom-dropdown-item.selected {
+    background-color: var(--primary) !important;
+    color: white !important;
+}
+
+/* Scrollbar styling for dropdown */
+.custom-dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 3px;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 3px;
+}
+
+.custom-dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
 /* Ensure dropdown arrow is visible */
 .contact-form .form-select {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23343a40' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 6 7 7 7-7'/%3e%3c/svg%3e");

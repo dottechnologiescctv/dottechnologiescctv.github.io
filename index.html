@@ -633,22 +633,28 @@
                             </div>
                             <div class="mb-4">
                                 <label for="service" class="form-label">Service Required</label>
-                                <select class="form-select form-select-lg" id="service">
-                                    <option value="">Select a service</option>
-                                    <option value="cctv-installation">CCTV Camera Installation</option>
-                                    <option value="dvr-nvr-systems">DVR/NVR Systems</option>
-                                    <option value="wireless-cctv">Wireless CCTV Systems</option>
-                                    <option value="mobile-app-integration">Mobile App Integration</option>
-                                    <option value="cloud-storage">Cloud Storage Solutions</option>
-                                    <option value="night-vision-cameras">Night Vision Cameras</option>
-                                    <option value="access-control">Access Control Systems</option>
-                                    <option value="motion-detection">Motion Detection & Alerts</option>
-                                    <option value="cctv-maintenance">CCTV Maintenance & Repair</option>
-                                    <option value="computer-repair">Computer/Laptop Repair</option>
-                                    <option value="network-setup">Network Setup & Configuration</option>
-                                    <option value="technical-support">24/7 Technical Support</option>
-                                    <option value="other">Other Services</option>
-                                </select>
+                                <div class="custom-dropdown">
+                                    <div class="custom-dropdown-toggle" id="serviceDropdown">
+                                        <span class="selected-text">Select a service</span>
+                                        <i class="fas fa-chevron-down"></i>
+                                    </div>
+                                    <div class="custom-dropdown-menu" id="serviceDropdownMenu">
+                                        <div class="custom-dropdown-item" data-value="cctv-installation">CCTV Camera Installation</div>
+                                        <div class="custom-dropdown-item" data-value="dvr-nvr-systems">DVR/NVR Systems</div>
+                                        <div class="custom-dropdown-item" data-value="wireless-cctv">Wireless CCTV Systems</div>
+                                        <div class="custom-dropdown-item" data-value="mobile-app-integration">Mobile App Integration</div>
+                                        <div class="custom-dropdown-item" data-value="cloud-storage">Cloud Storage Solutions</div>
+                                        <div class="custom-dropdown-item" data-value="night-vision-cameras">Night Vision Cameras</div>
+                                        <div class="custom-dropdown-item" data-value="access-control">Access Control Systems</div>
+                                        <div class="custom-dropdown-item" data-value="motion-detection">Motion Detection & Alerts</div>
+                                        <div class="custom-dropdown-item" data-value="cctv-maintenance">CCTV Maintenance & Repair</div>
+                                        <div class="custom-dropdown-item" data-value="computer-repair">Computer/Laptop Repair</div>
+                                        <div class="custom-dropdown-item" data-value="network-setup">Network Setup & Configuration</div>
+                                        <div class="custom-dropdown-item" data-value="technical-support">24/7 Technical Support</div>
+                                        <div class="custom-dropdown-item" data-value="other">Other Services</div>
+                                    </div>
+                                    <input type="hidden" id="service" name="service" value="">
+                                </div>
                             </div>
                             <div class="mb-4">
                                 <label for="message" class="form-label">Your Message</label>
@@ -915,6 +921,58 @@
         });
         
         images.forEach(img => imageObserver.observe(img));
+        
+        // Custom dropdown functionality
+        const serviceDropdown = document.getElementById('serviceDropdown');
+        const serviceDropdownMenu = document.getElementById('serviceDropdownMenu');
+        const serviceInput = document.getElementById('service');
+        const selectedText = document.querySelector('.selected-text');
+        
+        if (serviceDropdown && serviceDropdownMenu) {
+            // Toggle dropdown
+            serviceDropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+                const dropdown = this.closest('.custom-dropdown');
+                dropdown.classList.toggle('active');
+            });
+            
+            // Handle option selection
+            const dropdownItems = document.querySelectorAll('.custom-dropdown-item');
+            dropdownItems.forEach(item => {
+                item.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const value = this.getAttribute('data-value');
+                    const text = this.textContent;
+                    
+                    // Update hidden input
+                    serviceInput.value = value;
+                    
+                    // Update display text
+                    selectedText.textContent = text;
+                    
+                    // Update visual state
+                    dropdownItems.forEach(i => i.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    // Close dropdown
+                    serviceDropdown.closest('.custom-dropdown').classList.remove('active');
+                });
+            });
+            
+            // Close dropdown when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!e.target.closest('.custom-dropdown')) {
+                    serviceDropdown.closest('.custom-dropdown').classList.remove('active');
+                }
+            });
+            
+            // Close dropdown on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    serviceDropdown.closest('.custom-dropdown').classList.remove('active');
+                }
+            });
+        }
     </script>
 
 
