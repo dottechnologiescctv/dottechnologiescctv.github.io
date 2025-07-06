@@ -1731,3 +1731,7 @@ body {
 .text-primary{
     color: #fb5b29 !important;
 }
+
+a {
+    color: #fb5b29 !important;
+}
