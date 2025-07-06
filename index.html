@@ -100,10 +100,13 @@
                         <a class="nav-link" href="#services">Services</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="#about">Our Story</a>
+                        <a class="nav-link" href="#brands">Brands</a>
                     </li>
                     <li class="nav-item mx-2">
-                        <a class="nav-link" href="#cctv">CCTV Products</a>
+                        <a class="nav-link" href="#products">Products</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a class="nav-link" href="#about">About</a>
                     </li>
                     <li class="nav-item mx-2">
                         <a class="nav-link" href="#contact">Contact</a>
@@ -399,7 +402,7 @@
     </section>
 
     <!-- CCTV Solutions Section -->
-    <section id="cctv" class="section-container bg-light">
+    <section id="products" class="section-container bg-light">
         <div class="container container-custom">
             <h2 class="section-title fade-in visible">CCTV Products &amp; Security Solutions</h2>
            
@@ -868,6 +871,17 @@
         
         // Update active nav link on page load
         updateActiveNavLink();
+        
+        // Floating navbar scroll effect
+        const navbar = document.querySelector('.navbar');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
         
         // Back to Top Button functionality
         const backToTopButton = document.getElementById('backToTop');
