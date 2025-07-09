@@ -1,5 +1,5 @@
 :root {
-    --primary: #fb5b29;
+    --primary: #f75a2a;
     --secondary: #f84813;
     --accent: #ff3c00;
     --light: #eff6ff;
@@ -370,7 +370,7 @@ body {
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 15px 0;
+    padding: 12px 0;
     position: fixed;
     top: 20px;
     left: 50%;
@@ -1436,7 +1436,6 @@ body {
     left: 50%;
     transform: translateX(-50%);
     width: 0;
-    height: 2px;
     background-color: #f8f9fa;
     transition: all 0.3s ease;
 }
@@ -1889,11 +1888,11 @@ body {
 }
 
 .text-primary{
-    color: #fb5b29 !important;
+    color: #f75a2a !important;
 }
 
 a {
-    color: #fb5b29 !important;
+    color: #f75a2a !important;
 }
 
 /* Fix anchor links in sections with primary backgrounds */
