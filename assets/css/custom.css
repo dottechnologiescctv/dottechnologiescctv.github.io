@@ -370,7 +370,6 @@ body {
     -webkit-backdrop-filter: blur(20px);
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 12px 0;
     position: fixed;
     top: 20px;
     left: 50%;
@@ -1454,7 +1453,6 @@ body {
         width: 98%;
         top: 10px;
         border-radius: 25px;
-        padding: 10px 0;
     }
     
     .navbar.scrolled {
